@@ -1,11 +1,11 @@
 package hunter.eventmanager.sg;
 
 public class Event {
-  String name;
+	String name;
 	String date;
 	String place;
 	String duration;
-	String decription;
+	String description;
 	String key_id;
 	
 	public Event(String name, String date, String place, String duration, String description){
@@ -18,7 +18,7 @@ public class Event {
 	
 	//Getters and Setters
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
@@ -49,19 +49,19 @@ public class Event {
 		this.key_id = key_id;
 	}
 	
-	public void setDuration(){
+	public void setDuration(String duration){
 	 this.duration = duration;
 	}
 	
 	public String getDuration(){
 	return duration;
 	}
-	 public void setDescription(){
+	 public void setDescription(String description){
 	 this.description = description;
 	 }
 	
 	public String getDescription(){
-	return decription;
+	return description;
 
 	}
 	
