@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="fill_parent" 
+	android:layout_width="fill_parent"
+	 android:background="@drawable/dubai"
+	android:orientation="vertical"
+	android:gravity="center">
+
+	<EditText5 
+	android:id="@+id/editText5" 
+	android:hint="Enter Event Name" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText5>
+		<EditText6 
+	android:id="@+id/editText6" 
+	android:hint="Enter The Event Date" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText6>
+		<EditText7 
+	android:id="@+id/editText7" 
+	android:hint="Enter The Place" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText7>
+			<EditText8 
+	android:id="@+id/editText8" 
+	android:hint="Enter Duration" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText8>
+			<EditText9 
+	android:id="@+id/editText9" 
+	android:hint="Enter Description" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText9>
+			<EditText10 
+	android:id="@+id/editText10" 
+	android:hint="Enter Time" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText10>
+		
+	
+	<Button 
+	android:gravity="center_vertical"
+	android:layout_width="fill_parent"
+	 android:id="@+id/createnext" 
+	 android:layout_height="wrap_content" 
+	 android:text="Next"
+	 ></Button>
+</LinearLayout>
