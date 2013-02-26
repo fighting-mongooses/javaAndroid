@@ -1,0 +1,76 @@
+package com.example.managerevents;
+
+import com.example.managerevents.CreateConference;
+import com.example.managerevents.Database;
+import com.example.managerevents.R;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class  CreateConference extends Activity {
+  @Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.create_conference);
+		final Database db=new Database(CreateConference.this);
+
+		
+	    Button btn;
+		
+		final EditText editText1 = (EditText)findViewById(R.id.editText1);
+		final EditText editText2 = (EditText)findViewById(R.id.editText2);
+		final EditText editText3 = (EditText)findViewById(R.id.editText3);
+		final EditText editText4 = (EditText)findViewById(R.id.editText4);
+		
+		//used for  saving a players name
+		btn=(Button) findViewById(R.id.createnext);
+		btn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				final String name=editText1.getText().toString();
+				final String description=editText2.getText().toString();
+				final String startdate=editText3.getText().toString();
+				final String enddate=editText4.getText().toString();
+				Log.i("Name:", name);
+				Log.i("Description", description);
+				Log.i("Start Date", startdate);
+				Log.i("End Date", enddate);
+				db.open();
+				db.createConferenceEntry(name,description,startdate, enddate);
+			
+				db.close();
+				Intent event= new Intent("com.example.managerevents.CreateEvent");
+				 startActivity(event);
+				
+				
+			}
+		});
+
+		
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		//musicloop.release();
+	}
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+	//	musicloop.pause();
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		//musicloop.start();
+	}
+}
