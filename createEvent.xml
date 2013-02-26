@@ -1,0 +1,83 @@
+package com.example.managerevents;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+public class CreateEvent extends Activity{
+  //   MediaPlayer musicloop,buttonclick;
+	public void onCreate(Bundle savedInstanceState){ 
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.create_event);
+		final Database db=new Database(CreateEvent.this);
+
+
+	    Button btn;
+
+		
+		final EditText editText5 = (EditText)findViewById(R.id.editText5);
+		final EditText editText6 = (EditText)findViewById(R.id.editText6);
+		final EditText editText7 = (EditText)findViewById(R.id.editText7);
+		final EditText editText8 = (EditText)findViewById(R.id.editText8);
+		final EditText editText9 = (EditText)findViewById(R.id.editText9);
+		final EditText editText10 = (EditText)findViewById(R.id.editText10);
+		
+		//used for  saving a players name
+		btn=(Button) findViewById(R.id.createnext);
+		btn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//startActivity
+           		final String name=editText5.getText().toString();
+				final String date=editText6.getText().toString();
+				final String place=editText7.getText().toString();
+				final String duration=editText8.getText().toString();
+				final String description=editText9.getText().toString();
+				final String time=editText10.getText().toString();
+				Log.i("textbox5", name);
+				Log.i("textbox6", date);
+				Log.i("textbox7", place);
+				Log.i("textbox8", duration);
+				Log.i("textbox9", description);
+				Log.i("textbox10", time);
+				db.open();
+				db.createEventEntry(name,date,place,duration,description,time);
+			
+				db.close();
+				Intent startingpoint1= new Intent("android.intent.action.MAIN");
+				 startActivity(startingpoint1);
+				
+				
+			}
+		});
+	    
+	}
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		//musicloop.release();
+	}
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+	//	musicloop.pause();
+	}
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		//musicloop.start();
+	}
+
+}
+
