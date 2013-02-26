@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="fill_parent" 
+	android:layout_width="fill_parent"
+	android:orientation="vertical"
+	android:gravity="center">
+
+
+	<EditText1 
+	android:id="@+id/editText1" 
+	android:hint="Enter Conference Name" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText1>
+		<EditText2 
+	android:id="@+id/editText2" 
+	android:hint="Describe The Conference" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText2>
+		<EditText3 
+	android:id="@+id/editText3" 
+	android:hint="Enter The Conference Start Date" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText3>
+			<EditText4 
+	android:id="@+id/editText4" 
+	android:hint="Enter The Conference End Date" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	></EditText4>
+		
+	
+	<Button 
+	android:gravity="center_vertical"
+	android:layout_width="fill_parent"
+	 android:id="@+id/createnext" 
+	 android:layout_height="wrap_content" 
+	 android:text="Create Events"
+	 ></Button>
+</LinearLayout>
